@@ -27,7 +27,7 @@
 <h1 class="title">In-Class Lab Guide</h1>
 </header>
 <p><strong>Digital Communication and Emerging Technologies</strong></p>
-<p><em>In-Class Lab Guide (Instructor Notes + Student Worksheets)</em></p>
+<p><em>In-Class Lab Guide (Student Worksheets)</em></p>
 <p>NCCU ISS 2026</p>
 <p><strong>How to use this guide</strong></p>
 <ul>
@@ -57,12 +57,6 @@
 <li><p>Make the network large (for example 6 neurons by 4 layers) and compare training loss with test loss. The gap is overfitting.</p></li>
 </ul>
 <p><strong>Deliverable: </strong>A screenshot of your best Spiral network, plus two sentences: what adding neurons or layers did, and what overfitting means in your own words.</p>
-<p><strong>Instructor notes</strong></p>
-<ul>
-<li><p>Runs in any browser on lab machines. Keep the math out; focus on intuition.</p></li>
-<li><p>Early finishers: try changing the activation function or the learning rate and observe the effect.</p></li>
-<li><p>Common confusion: features versus neurons. Clarify with a quick board sketch.</p></li>
-</ul>
 <p><strong>Day 2 (7/21): Train an Image Classifier (Fashion-MNIST)</strong></p>
 <p><strong>Goal: </strong>Train a real image classifier and see how design choices change accuracy and overfitting.</p>
 <p><strong>Tools: </strong>Google Colab (pre-built notebook, mostly run-only with clearly marked edit cells); Fashion-MNIST dataset.</p>
@@ -87,12 +81,6 @@
 <li><p>Decide which setting gave the best validation accuracy and write it down.</p></li>
 </ul>
 <p><strong>Deliverable: </strong>Your best validation accuracy and the settings that produced it, plus one misclassified image (screenshot) with a one-line guess at why.</p>
-<p><strong>Instructor notes</strong></p>
-<ul>
-<li><p>Share the notebook link or a QR code in advance; mark editable cells clearly (for example, ### CHANGE ME ###).</p></li>
-<li><p>Fashion-MNIST loads from keras.datasets and trains fast on CPU, so no GPU is needed. Keep a results-cached copy as a fallback if Colab is slow.</p></li>
-<li><p>Advanced groups can add a Dropout layer and observe how the train and validation gap changes.</p></li>
-</ul>
 <p><strong>Day 3 (7/22): Prompt Engineering with Claude</strong></p>
 <p><strong>Goal: </strong>Learn to write effective prompts and recognize the limits of language models, including misinformation.</p>
 <p><strong>Tools: </strong>Claude (claude.ai), in the browser.</p>
@@ -116,12 +104,6 @@
 <p>Part B. Prompt battle. As a team, take the same task (for example, pull structured information out of a messy paragraph), craft the best prompt you can, and compare outputs across teams.</p>
 <p>Part C. Misinformation check. Give Claude a doubtful claim, ask it to assess the claim and explain its reasoning, then verify against a real source. Where did it help, and where could it mislead?</p>
 <p><strong>Deliverable: </strong>Your before-and-after prompt pair with one sentence on the biggest improvement, plus one observation about a language-model limitation or risk.</p>
-<p><strong>Instructor notes</strong></p>
-<ul>
-<li><p>Standardize on Claude. If account limits are a concern, have students work in pairs on one account.</p></li>
-<li><p>Stress verification: models can sound confident yet be wrong. Tie this to the deepfakes and misinformation theme.</p></li>
-<li><p>Keep example tasks close to humanities and social-science interests.</p></li>
-</ul>
 <p><strong>Day 4 (7/23): Try an AI Agent (Claude) on a Real Task</strong></p>
 <p><strong>Goal: </strong>Experience Claude as a collaborator on a multi-step task, then critique and iterate.</p>
 <p><strong>Tools: </strong>Claude (claude.ai). Reading tie-in: The Founder’s Playbook.</p>
@@ -147,11 +129,6 @@
 <li><p>Iterate two or three times and notice how it uses your feedback.</p></li>
 </ul>
 <p><strong>Deliverable: </strong>The task you chose, the final output, and three bullets: what worked, what failed, and what you would change about your instructions.</p>
-<p><strong>Instructor notes</strong></p>
-<ul>
-<li><p>This previews the group project. Connect it to the Founder’s Playbook reading: people use Claude to build and work, not just to chat.</p></li>
-<li><p>Remind students to verify facts and not to over-trust the output.</p></li>
-</ul>
 <p><strong>Day 5 (7/27): Synthetic Media, Misinformation &amp; Trust (Hands-on Studio)</strong></p>
 <p><strong>Goal: </strong>Investigate how generative AI creates synthetic media, and build practical habits for detecting it and deciding what to trust. This session ties the whole course back to digital communication.</p>
 <p><strong>Tools: </strong>Browser only. Claude (claude.ai); a reverse image search (Google Images or TinEye); the Content Credentials verifier (contentcredentials.org/verify); the SIFT method for lateral reading.</p>
@@ -173,13 +150,6 @@
 </ul>
 <p>Part C. Red team / blue team. As a team, use Claude to draft one plausible but false claim on a topic you care about, then switch roles and use Claude plus at least two real sources to debunk it. Record what made the fake convincing and what finally exposed it.</p>
 <p><strong>Deliverable: </strong>A short verification log: one item you checked, the three moves you ran and what each revealed, your final judgment (trustworthy or not), and one sentence on how this changes the way you will share content online.</p>
-<p><strong>Instructor notes</strong></p>
-<ul>
-<li><p>Prepare the Station A example set in advance (a few paired real and AI-generated images, one AI voice clip, one AI-written paragraph) and keep an answer key. Rotate teams through stations if lab seating is tight, or run all three in sequence.</p></li>
-<li><p>Emphasize that detection tells are not permanent: as generators improve, provenance and lateral reading matter more than spotting artifacts. This is the durable lesson.</p></li>
-<li><p>Handle the red-team step responsibly: the false claims stay inside the classroom exercise and are debunked before the session ends. Frame it as understanding the threat in order to counter it.</p></li>
-<li><p>This studio is the strongest tie to the digital-communication theme (misinformation, deepfakes, trust); encourage teams to consider a related angle for their Day 6 presentation.</p></li>
-</ul>
 <p><strong>Day 6 (7/28): Group Presentations</strong></p>
 <p>Each of the 4 teams presents a chosen AI application or issue, drawing on the labs and the synthetic-media studio. Plan on about 7 minutes of talk plus 3 minutes of Q&amp;A per team.</p>
 <p><strong>Run of show</strong></p>
@@ -199,7 +169,7 @@
 <li><p>Connection to course concepts and your own hands-on results.</p></li>
 <li><p>Conclusion and questions for the audience.</p></li>
 </ul>
-<p><strong>Grading rubric (share with students)</strong></p>
+<p><strong>Grading rubric</strong></p>
 <ul>
 <li><p>Content and accuracy.</p></li>
 <li><p>Critical analysis: value plus a societal or ethical implication.</p></li>

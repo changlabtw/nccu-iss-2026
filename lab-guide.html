@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>In-Class Lab Guide</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<nav class="topnav"><div class="inner">
+  <a class="home" href="index.html">← Course Home</a>
+  <a href="syllabus.html">Syllabus</a>
+  <a href="lab-guide.html">Lab Guide</a>
+  <a href="supplement.html">Objectives &amp; NotebookLM</a>
+</div></nav>
+<div class="wrap doc">
+<header id="title-block-header">
+<h1 class="title">In-Class Lab Guide</h1>
+</header>
+<p><strong>Digital Communication and Emerging Technologies</strong></p>
+<p><em>In-Class Lab Guide (Instructor Notes + Student Worksheets)</em></p>
+<p>NCCU ISS 2026</p>
+<p><strong>How to use this guide</strong></p>
+<ul>
+<li><p>Each in-class session runs about 1.5 hours and is fully browser-based, so it works on the library lab computers with no installation and no personal laptop required.</p></li>
+<li><p>We standardize on Claude (claude.ai) as the course LLM, so it stays consistent with the AI-agent session and the NotebookLM handout.</p></li>
+<li><p>Students work in 4 teams (15 students split as three teams of 4 and one team of 3), seated together so they can collaborate and later present as a team.</p></li>
+<li><p>Days 1 to 5 are hands-on labs (below). Day 6 is the group presentations (rubric and templates at the end). The separate NotebookLM handout supports each team’s presentation research.</p></li>
+</ul>
+<p><strong>Day 1 (7/20): AI Big Picture &amp; Neural Network Intuition</strong></p>
+<p><strong>Goal: </strong>Build intuition for how a neural network learns, with no coding.</p>
+<p><strong>Tools: </strong>TensorFlow Playground (playground.tensorflow.org); account setup for Google/Colab, Claude, and NotebookLM.</p>
+<p><strong>Run of show</strong></p>
+<ul>
+<li><p>0:00–0:10 Account setup checklist (Google/Colab, Claude, NotebookLM); help your neighbor.</p></li>
+<li><p>0:10–0:15 Form the 4 teams and choose a team name.</p></li>
+<li><p>0:15–0:30 Guided tour of Playground (features, hidden layers, neurons, output, loss).</p></li>
+<li><p>0:30–1:05 Challenge worksheet (below).</p></li>
+<li><p>1:05–1:20 Share best networks; discuss overfitting.</p></li>
+<li><p>1:20–1:30 Wrap-up and link to Day 2.</p></li>
+</ul>
+<p><strong>Student worksheet</strong></p>
+<ul>
+<li><p>Open playground.tensorflow.org, choose the Circle dataset, and press play. Watch the loss go down.</p></li>
+<li><p>Set hidden layers to 0. Can the model separate the data? Why or why not?</p></li>
+<li><p>Add one hidden layer with 2 neurons and classify the Circle. Record your test loss.</p></li>
+<li><p>Switch to the Spiral dataset. Challenge: reach test loss below 0.1 using as few neurons as possible. Record your architecture.</p></li>
+<li><p>Make the network large (for example 6 neurons by 4 layers) and compare training loss with test loss. The gap is overfitting.</p></li>
+</ul>
+<p><strong>Deliverable: </strong>A screenshot of your best Spiral network, plus two sentences: what adding neurons or layers did, and what overfitting means in your own words.</p>
+<p><strong>Instructor notes</strong></p>
+<ul>
+<li><p>Runs in any browser on lab machines. Keep the math out; focus on intuition.</p></li>
+<li><p>Early finishers: try changing the activation function or the learning rate and observe the effect.</p></li>
+<li><p>Common confusion: features versus neurons. Clarify with a quick board sketch.</p></li>
+</ul>
+<p><strong>Day 2 (7/21): Train an Image Classifier (Fashion-MNIST)</strong></p>
+<p><strong>Goal: </strong>Train a real image classifier and see how design choices change accuracy and overfitting.</p>
+<p><strong>Tools: </strong>Google Colab (pre-built notebook, mostly run-only with clearly marked edit cells); Fashion-MNIST dataset.</p>
+<p><strong>Run of show</strong></p>
+<ul>
+<li><p>0:00–0:10 Open the shared Colab link; File &gt; Save a copy in Drive.</p></li>
+<li><p>0:10–0:30 Run the load and view cells; look at the 10 clothing classes and sample images.</p></li>
+<li><p>0:30–0:55 Build and train the model; read training and validation accuracy; find a misclassified image.</p></li>
+<li><p>0:55–1:15 Parameter experiment: change one thing at a time and re-run.</p></li>
+<li><p>1:15–1:30 Compare results across groups; discuss overfitting.</p></li>
+</ul>
+<p><strong>Student worksheet</strong></p>
+<ul>
+<li><p>Open the Colab link, then File &gt; Save a copy in Drive so you can edit your own copy.</p></li>
+<li><p>Run the first cells to load Fashion-MNIST. Look at the 10 classes (T-shirt, trouser, and so on) and view a few sample images.</p></li>
+<li><p>Run the model-building and training cells. Record the final training accuracy and validation accuracy.</p></li>
+<li><p>Run the show-predictions cell. Find one image the model got wrong and note what it guessed.</p></li>
+<li><p>Parameter experiment. Change one item at a time, re-run training, and record the validation accuracy each time:</p></li>
+<li><p>Increase epochs from 5 to 15. Better or worse? Any sign of overfitting?</p></li>
+<li><p>Change the hidden layer size (for example 128 to 32, then to 256).</p></li>
+<li><p>Add a second hidden layer.</p></li>
+<li><p>Decide which setting gave the best validation accuracy and write it down.</p></li>
+</ul>
+<p><strong>Deliverable: </strong>Your best validation accuracy and the settings that produced it, plus one misclassified image (screenshot) with a one-line guess at why.</p>
+<p><strong>Instructor notes</strong></p>
+<ul>
+<li><p>Share the notebook link or a QR code in advance; mark editable cells clearly (for example, ### CHANGE ME ###).</p></li>
+<li><p>Fashion-MNIST loads from keras.datasets and trains fast on CPU, so no GPU is needed. Keep a results-cached copy as a fallback if Colab is slow.</p></li>
+<li><p>Advanced groups can add a Dropout layer and observe how the train and validation gap changes.</p></li>
+</ul>
+<p><strong>Day 3 (7/22): Prompt Engineering with Claude</strong></p>
+<p><strong>Goal: </strong>Learn to write effective prompts and recognize the limits of language models, including misinformation.</p>
+<p><strong>Tools: </strong>Claude (claude.ai), in the browser.</p>
+<p><strong>Run of show</strong></p>
+<ul>
+<li><p>0:00–0:10 What makes a good prompt: role, context, examples, output format, step-by-step.</p></li>
+<li><p>0:10–0:40 Iterative prompting worksheet (Part A).</p></li>
+<li><p>0:40–1:00 Prompt battle in teams (Part B).</p></li>
+<li><p>1:00–1:20 Misinformation mini-case (Part C); discuss verification and trust.</p></li>
+<li><p>1:20–1:30 Debrief: which principles worked best.</p></li>
+</ul>
+<p><strong>Student worksheet</strong></p>
+<p>Part A. Iterative prompting. Pick a task, such as summarizing a news article for a 12-year-old, or drafting a polite email that declines an invitation.</p>
+<ul>
+<li><p>Write a basic one-line prompt and save the output.</p></li>
+<li><p>Add a role and audience (for example, “You are a science teacher writing for 12-year-olds”) and re-run. What improved?</p></li>
+<li><p>Add an explicit output format (for example, three bullet points, each under 15 words) and re-run.</p></li>
+<li><p>Add one example of what you want (one-shot) and re-run.</p></li>
+<li><p>Note which single change helped the most.</p></li>
+</ul>
+<p>Part B. Prompt battle. As a team, take the same task (for example, pull structured information out of a messy paragraph), craft the best prompt you can, and compare outputs across teams.</p>
+<p>Part C. Misinformation check. Give Claude a doubtful claim, ask it to assess the claim and explain its reasoning, then verify against a real source. Where did it help, and where could it mislead?</p>
+<p><strong>Deliverable: </strong>Your before-and-after prompt pair with one sentence on the biggest improvement, plus one observation about a language-model limitation or risk.</p>
+<p><strong>Instructor notes</strong></p>
+<ul>
+<li><p>Standardize on Claude. If account limits are a concern, have students work in pairs on one account.</p></li>
+<li><p>Stress verification: models can sound confident yet be wrong. Tie this to the deepfakes and misinformation theme.</p></li>
+<li><p>Keep example tasks close to humanities and social-science interests.</p></li>
+</ul>
+<p><strong>Day 4 (7/23): Try an AI Agent (Claude) on a Real Task</strong></p>
+<p><strong>Goal: </strong>Experience Claude as a collaborator on a multi-step task, then critique and iterate.</p>
+<p><strong>Tools: </strong>Claude (claude.ai). Reading tie-in: The Founder’s Playbook.</p>
+<p><strong>Run of show</strong></p>
+<ul>
+<li><p>0:00–0:10 What an AI agent is, versus a simple chatbot (Karpathy framing).</p></li>
+<li><p>0:10–0:50 Agent task worksheet.</p></li>
+<li><p>0:50–1:10 Critique and iterate.</p></li>
+<li><p>1:10–1:30 Discussion: where agents help, where they fail, and how people build with Claude.</p></li>
+</ul>
+<p><strong>Student worksheet</strong></p>
+<p>Choose one multi-step task:</p>
+<ul>
+<li><p>Turn your messy course notes (paste them in) into a structured study guide with key terms and a short quiz.</p></li>
+<li><p>Plan a three-stop campus or neighborhood tour for visiting students, with a short reason for each stop.</p></li>
+<li><p>Draft a short opinion piece on an AI topic, then ask Claude to critique its own argument and revise it.</p></li>
+</ul>
+<p>Then follow these steps:</p>
+<ul>
+<li><p>Give Claude the task with clear context and the output you want.</p></li>
+<li><p>Ask it to outline its plan before doing the task, and review the plan.</p></li>
+<li><p>Let it produce the result, then push back: request changes, point out a weakness, or ask for sources or a different tone.</p></li>
+<li><p>Iterate two or three times and notice how it uses your feedback.</p></li>
+</ul>
+<p><strong>Deliverable: </strong>The task you chose, the final output, and three bullets: what worked, what failed, and what you would change about your instructions.</p>
+<p><strong>Instructor notes</strong></p>
+<ul>
+<li><p>This previews the group project. Connect it to the Founder’s Playbook reading: people use Claude to build and work, not just to chat.</p></li>
+<li><p>Remind students to verify facts and not to over-trust the output.</p></li>
+</ul>
+<p><strong>Day 5 (7/27): Synthetic Media, Misinformation &amp; Trust (Hands-on Studio)</strong></p>
+<p><strong>Goal: </strong>Investigate how generative AI creates synthetic media, and build practical habits for detecting it and deciding what to trust. This session ties the whole course back to digital communication.</p>
+<p><strong>Tools: </strong>Browser only. Claude (claude.ai); a reverse image search (Google Images or TinEye); the Content Credentials verifier (contentcredentials.org/verify); the SIFT method for lateral reading.</p>
+<p><strong>Run of show</strong></p>
+<ul>
+<li><p>0:00–0:10 Framing: the synthetic-media spectrum, from cheapfakes (miscaptioned or edited real media) to deepfakes (fully AI-generated). Why this matters for communication, journalism, and public trust.</p></li>
+<li><p>0:10–0:35 Station A, Spot the fake. In pairs, compare sets of real and AI-generated images, short audio clips, and text, and record the tells that gave each one away.</p></li>
+<li><p>0:35–1:00 Station B, Verification toolkit. Practice three moves on a real example: reverse image search to find the origin, Content Credentials to read provenance, and the SIFT method (Stop, Investigate the source, Find better coverage, Trace to the original) for lateral reading.</p></li>
+<li><p>1:00–1:20 Station C, Red team / blue team. Using Claude, the red side drafts a plausible but false claim with a convincing style; the blue side then uses Claude plus real sources to debunk it. Debrief the dual-use tension and where each side broke down.</p></li>
+<li><p>1:20–1:30 Debrief and bridge to the group project: what makes a claim trustworthy, and how teams will document their own sources with NotebookLM.</p></li>
+</ul>
+<p><strong>Student worksheet</strong></p>
+<p>Part A. Spot the fake. For each item you are shown (image, audio, text), write down your verdict (real or AI-generated) and the single strongest tell you noticed. Then compare with the answer key and note one tell that fooled you.</p>
+<p>Part B. Verification toolkit. Take one questionable image or claim and run all three moves:</p>
+<ul>
+<li><p>Reverse image search: where does this image actually first appear, and in what context?</p></li>
+<li><p>Content Credentials (contentcredentials.org/verify): does the file carry provenance data? What does it say about how it was made or edited?</p></li>
+<li><p>SIFT / lateral reading: leave the page, find what other reliable sources say, and trace the claim to its original context.</p></li>
+</ul>
+<p>Part C. Red team / blue team. As a team, use Claude to draft one plausible but false claim on a topic you care about, then switch roles and use Claude plus at least two real sources to debunk it. Record what made the fake convincing and what finally exposed it.</p>
+<p><strong>Deliverable: </strong>A short verification log: one item you checked, the three moves you ran and what each revealed, your final judgment (trustworthy or not), and one sentence on how this changes the way you will share content online.</p>
+<p><strong>Instructor notes</strong></p>
+<ul>
+<li><p>Prepare the Station A example set in advance (a few paired real and AI-generated images, one AI voice clip, one AI-written paragraph) and keep an answer key. Rotate teams through stations if lab seating is tight, or run all three in sequence.</p></li>
+<li><p>Emphasize that detection tells are not permanent: as generators improve, provenance and lateral reading matter more than spotting artifacts. This is the durable lesson.</p></li>
+<li><p>Handle the red-team step responsibly: the false claims stay inside the classroom exercise and are debunked before the session ends. Frame it as understanding the threat in order to counter it.</p></li>
+<li><p>This studio is the strongest tie to the digital-communication theme (misinformation, deepfakes, trust); encourage teams to consider a related angle for their Day 6 presentation.</p></li>
+</ul>
+<p><strong>Day 6 (7/28): Group Presentations</strong></p>
+<p>Each of the 4 teams presents a chosen AI application or issue, drawing on the labs and the synthetic-media studio. Plan on about 7 minutes of talk plus 3 minutes of Q&amp;A per team.</p>
+<p><strong>Run of show</strong></p>
+<ul>
+<li><p>0:00–0:10 Set up; confirm presentation order; remind students of the rubric.</p></li>
+<li><p>0:10–1:00 Four team presentations, about 10 minutes each (7 minutes talk, 3 minutes Q&amp;A).</p></li>
+<li><p>1:00–1:20 Peer feedback forms and short instructor comments.</p></li>
+<li><p>1:20–1:30 Course wrap-up and final reflection.</p></li>
+</ul>
+<p><strong>Slide outline (1-page template)</strong></p>
+<ul>
+<li><p>Title and team members.</p></li>
+<li><p>The AI application or issue you chose.</p></li>
+<li><p>How it works, in plain language.</p></li>
+<li><p>Why it matters: its value or benefit.</p></li>
+<li><p>Risks and ethics: misinformation, bias, trust, or privacy.</p></li>
+<li><p>Connection to course concepts and your own hands-on results.</p></li>
+<li><p>Conclusion and questions for the audience.</p></li>
+</ul>
+<p><strong>Grading rubric (share with students)</strong></p>
+<ul>
+<li><p>Content and accuracy.</p></li>
+<li><p>Critical analysis: value plus a societal or ethical implication.</p></li>
+<li><p>Connection to course concepts and hands-on labs.</p></li>
+<li><p>Use and citation of sources (organized with NotebookLM).</p></li>
+<li><p>Delivery and clarity.</p></li>
+<li><p>Response to questions.</p></li>
+<li><p>Teamwork and equal participation.</p></li>
+</ul>
+<p><strong>Peer feedback form (one per team, per audience member)</strong></p>
+<ul>
+<li><p>Two things this team did well.</p></li>
+<li><p>One question you still have.</p></li>
+<li><p>One concrete suggestion.</p></li>
+</ul>
+  <footer>
+    <a href="index.html">← Back to course home</a> · Contact: <a href="mailto:chang.jiaming@gmail.com">chang.jiaming@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>

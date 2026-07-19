@@ -27,14 +27,14 @@
 <h1 class="title">In-Class Lab Guide</h1>
 </header>
 <p><strong>Digital Communication and Emerging Technologies</strong></p>
-<p><em>In-Class Lab Guide (Student Worksheets)</em></p>
+<p><em>In-Class Lab Guide (Instructor Notes + Student Worksheets)</em></p>
 <p>NCCU ISS 2026</p>
 <p><strong>How to use this guide</strong></p>
 <ul>
-<li><p>Each in-class session runs about 1.5 hours and is fully browser-based, so it works on the library lab computers with no installation and no personal laptop required.</p></li>
+<li><p>Each day runs 09:10–10:30 lecture, a 10-minute break, then the hands-on lab from about 10:45 to 12:00 (roughly 1.25 hours). The lab is fully browser-based, so it works on the library lab computers with no installation and no personal laptop required.</p></li>
 <li><p>We standardize on Claude (claude.ai) as the course LLM, so it stays consistent with the AI-agent session and the NotebookLM handout.</p></li>
 <li><p>Students work in 4 teams (15 students split as three teams of 4 and one team of 3), seated together so they can collaborate and later present as a team.</p></li>
-<li><p>Days 1 to 5 are hands-on labs (below). Day 6 is the group presentations (rubric and templates at the end). The separate NotebookLM handout supports each team’s presentation research.</p></li>
+<li><p>Days 1 to 5 are hands-on labs (below). Days 3 to 5 build one final project (a topic chatbot that answers from your own documents), which teams present on Day 6.</p></li>
 </ul>
 <p><strong>Day 1 (7/20): AI Big Picture &amp; Neural Network Intuition</strong></p>
 <p><strong>Goal: </strong>Build intuition for how a neural network learns, with no coding.</p>
@@ -43,10 +43,10 @@
 <ul>
 <li><p>0:00–0:10 Account setup checklist (Google/Colab, Claude, NotebookLM); help your neighbor.</p></li>
 <li><p>0:10–0:15 Form the 4 teams and choose a team name.</p></li>
-<li><p>0:15–0:30 Guided tour of Playground (features, hidden layers, neurons, output, loss).</p></li>
-<li><p>0:30–1:05 Challenge worksheet (below).</p></li>
-<li><p>1:05–1:20 Share best networks; discuss overfitting.</p></li>
-<li><p>1:20–1:30 Wrap-up and link to Day 2.</p></li>
+<li><p>0:15–0:28 Guided tour of Playground (features, hidden layers, neurons, output, loss).</p></li>
+<li><p>0:28–1:00 Challenge worksheet (below).</p></li>
+<li><p>1:00–1:10 Share best networks; discuss overfitting.</p></li>
+<li><p>1:10–1:15 Wrap-up and link to Day 2.</p></li>
 </ul>
 <p><strong>Student worksheet</strong></p>
 <ul>
@@ -57,16 +57,22 @@
 <li><p>Make the network large (for example 6 neurons by 4 layers) and compare training loss with test loss. The gap is overfitting.</p></li>
 </ul>
 <p><strong>Deliverable: </strong>A screenshot of your best Spiral network, plus two sentences: what adding neurons or layers did, and what overfitting means in your own words.</p>
+<p><strong>Instructor notes</strong></p>
+<ul>
+<li><p>Runs in any browser on lab machines. Keep the math out; focus on intuition.</p></li>
+<li><p>Early finishers: try changing the activation function or the learning rate and observe the effect.</p></li>
+<li><p>Common confusion: features versus neurons. Clarify with a quick board sketch.</p></li>
+</ul>
 <p><strong>Day 2 (7/21): Train an Image Classifier (Fashion-MNIST)</strong></p>
 <p><strong>Goal: </strong>Train a real image classifier and see how design choices change accuracy and overfitting.</p>
 <p><strong>Tools: </strong>Google Colab (pre-built notebook, mostly run-only with clearly marked edit cells); Fashion-MNIST dataset.</p>
 <p><strong>Run of show</strong></p>
 <ul>
-<li><p>0:00–0:10 Open the shared Colab link; File &gt; Save a copy in Drive.</p></li>
-<li><p>0:10–0:30 Run the load and view cells; look at the 10 clothing classes and sample images.</p></li>
-<li><p>0:30–0:55 Build and train the model; read training and validation accuracy; find a misclassified image.</p></li>
-<li><p>0:55–1:15 Parameter experiment: change one thing at a time and re-run.</p></li>
-<li><p>1:15–1:30 Compare results across groups; discuss overfitting.</p></li>
+<li><p>0:00–0:08 Open the shared Colab link; File &gt; Save a copy in Drive.</p></li>
+<li><p>0:08–0:25 Run the load and view cells; look at the 10 clothing classes and sample images.</p></li>
+<li><p>0:25–0:50 Build and train the model; read training and validation accuracy; find a misclassified image.</p></li>
+<li><p>0:50–1:05 Parameter experiment: change one thing at a time and re-run.</p></li>
+<li><p>1:05–1:15 Compare results across groups; discuss overfitting.</p></li>
 </ul>
 <p><strong>Student worksheet</strong></p>
 <ul>
@@ -81,83 +87,96 @@
 <li><p>Decide which setting gave the best validation accuracy and write it down.</p></li>
 </ul>
 <p><strong>Deliverable: </strong>Your best validation accuracy and the settings that produced it, plus one misclassified image (screenshot) with a one-line guess at why.</p>
-<p><strong>Day 3 (7/22): Prompt Engineering with Claude</strong></p>
-<p><strong>Goal: </strong>Learn to write effective prompts and recognize the limits of language models, including misinformation.</p>
-<p><strong>Tools: </strong>Claude (claude.ai), in the browser.</p>
+<p><strong>Instructor notes</strong></p>
+<ul>
+<li><p>Share the notebook link or a QR code in advance; mark editable cells clearly (for example, ### CHANGE ME ###).</p></li>
+<li><p>Fashion-MNIST loads from keras.datasets and trains fast on CPU, so no GPU is needed. Keep a results-cached copy as a fallback if Colab is slow.</p></li>
+<li><p>Advanced groups can add a Dropout layer and observe how the train and validation gap changes.</p></li>
+</ul>
+<p><strong>Day 3 (7/22): Prompt Engineering + choose your project</strong></p>
+<p><strong>Goal: </strong>Learn to steer a language model with prompt engineering, then pick your team's final-project topic and draft its system prompt. Days 3 to 5 build one project: a topic chatbot that answers from documents you provide (a RAG app), presented on Day 6.</p>
+<p><strong>Tools: </strong>Google Colab; a free <a href="https://openrouter.ai/">OpenRouter</a> API key; free models (<code>mistralai/mistral-7b-instruct:free</code>, <code>google/gemma-3-12b-it:free</code>). Example notebook: <a href="https://colab.research.google.com/drive/12yE-Rc8vyGqzWeslRK_u4Y0_B5hSyDh4?usp=sharing">Prompt Engineering Colab</a>. Homework template: <a href="https://colab.research.google.com/drive/1eLt6xVOmCHp7bVyFN7K0B0u4adRqa7re?usp=sharing">template</a>.</p>
 <p><strong>Run of show</strong></p>
 <ul>
-<li><p>0:00–0:10 What makes a good prompt: role, context, examples, output format, step-by-step.</p></li>
-<li><p>0:10–0:40 Iterative prompting worksheet (Part A).</p></li>
-<li><p>0:40–1:00 Prompt battle in teams (Part B).</p></li>
-<li><p>1:00–1:20 Misinformation mini-case (Part C); discuss verification and trust.</p></li>
-<li><p>1:20–1:30 Debrief: which principles worked best.</p></li>
+<li><p>0:00&#8211;0:10 Get a free OpenRouter API key; open the example Colab; make your first model call.</p></li>
+<li><p>0:10&#8211;0:35 Five prompt techniques, one at a time: persona/role, format constraints, few-shot examples, precise description, and chain-of-thought. Change the system and user prompt, re-run, and note what improved.</p></li>
+<li><p>0:35&#8211;0:50 &#8220;Who&#8217;s on First&#8221; activity: run the same ambiguous dialogue through two or three different free models and compare how each one reasons.</p></li>
+<li><p>0:50&#8211;1:10 As a team, choose your final-project topic (be creative; it can relate to your own field) and draft a system prompt that uses at least two techniques.</p></li>
+<li><p>1:10&#8211;1:15 Share topics; preview Day 4 (giving your chatbot real knowledge with RAG).</p></li>
 </ul>
 <p><strong>Student worksheet</strong></p>
-<p>Part A. Iterative prompting. Pick a task, such as summarizing a news article for a 12-year-old, or drafting a polite email that declines an invitation.</p>
 <ul>
-<li><p>Write a basic one-line prompt and save the output.</p></li>
-<li><p>Add a role and audience (for example, “You are a science teacher writing for 12-year-olds”) and re-run. What improved?</p></li>
-<li><p>Add an explicit output format (for example, three bullet points, each under 15 words) and re-run.</p></li>
-<li><p>Add one example of what you want (one-shot) and re-run.</p></li>
-<li><p>Note which single change helped the most.</p></li>
+<li><p>In the example Colab, compare the model&#8217;s answer with no prompt engineering versus with prompt engineering. Apply at least two techniques.</p></li>
+<li><p>Try the persona technique: set the system prompt to a role (for example, &#8220;You are a biologist who can answer any question about living things&#8221;) and see how the answers change.</p></li>
+<li><p>Add a format constraint (for example, &#8220;list exactly five items, no introduction or conclusion&#8221;) and a one-shot example.</p></li>
+<li><p>Write one sentence on which single change helped most, and which two techniques you will use in your project&#8217;s system prompt.</p></li>
 </ul>
-<p>Part B. Prompt battle. As a team, take the same task (for example, pull structured information out of a messy paragraph), craft the best prompt you can, and compare outputs across teams.</p>
-<p>Part C. Misinformation check. Give Claude a doubtful claim, ask it to assess the claim and explain its reasoning, then verify against a real source. Where did it help, and where could it mislead?</p>
-<p><strong>Deliverable: </strong>Your before-and-after prompt pair with one sentence on the biggest improvement, plus one observation about a language-model limitation or risk.</p>
-<p><strong>Day 4 (7/23): Try an AI Agent (Claude) on a Real Task</strong></p>
-<p><strong>Goal: </strong>Experience Claude as a collaborator on a multi-step task, then critique and iterate.</p>
-<p><strong>Tools: </strong>Claude (claude.ai). Reading tie-in: The Founder’s Playbook.</p>
+<p><strong>Deliverable: </strong>Your team&#8217;s project topic and a first system prompt that uses at least two prompt-engineering techniques, plus a short note on the difference prompt engineering made. Remove your API key before sharing the Colab link.</p>
+<p><strong>Instructor notes</strong></p>
+<ul>
+<li><p>The course standardizes on Claude for discussion, but this lab uses OpenRouter free models so every team can call an API in Colab without cost. Have students work in teams on one key if rate limits bite.</p></li>
+<li><p>The five techniques and the &#8220;Who&#8217;s on First&#8221; example come from the TA hands-on materials; keep example tasks close to humanities and social-science interests.</p></li>
+<li><p>End on topic selection: this is the seed of the whole three-day project. Nudge teams toward topics with findable text sources (a Wikipedia subject, a body of documents, a domain they know).</p></li>
+</ul>
+<p><strong>Day 4 (7/23): Give your chatbot knowledge with RAG</strong></p>
+<p><strong>Goal: </strong>Build a retrieval-augmented (RAG) system so your chatbot answers from documents you provide, not just its training data. (Today&#8217;s lecture, AI at the Frontier of Science, is separate; this lab is your project build time.)</p>
+<p><strong>Tools: </strong>Google Colab (SentenceTransformer + FAISS) + OpenRouter free models. Example notebook: <a href="https://colab.research.google.com/drive/1wHrffdUar0DUa0h9TYNCbY3l0cV1ClX3?usp=sharing">RAG Colab</a>. Homework template: <a href="https://colab.research.google.com/drive/1silumgGEI0i2kzsdehe4-fZGIWX-d6N0?usp=sharing">template</a>. Sample texts: <a href="https://drive.google.com/drive/folders/1oyiGAzsgAsoQnzOzkSFOzM5vcSLd_bEV?usp=sharing">folder</a>.</p>
 <p><strong>Run of show</strong></p>
 <ul>
-<li><p>0:00–0:10 What an AI agent is, versus a simple chatbot (Karpathy framing).</p></li>
-<li><p>0:10–0:50 Agent task worksheet.</p></li>
-<li><p>0:50–1:10 Critique and iterate.</p></li>
-<li><p>1:10–1:30 Discussion: where agents help, where they fail, and how people build with Claude.</p></li>
+<li><p>0:00&#8211;0:08 Why RAG: a model&#8217;s knowledge has a cutoff and can hallucinate; RAG lets it retrieve from your documents. The retrieve &#8594; augment &#8594; generate flow, and embedding + indexing in plain terms.</p></li>
+<li><p>0:08&#8211;0:20 Copy the RAG Colab, add your API key, and Run all.</p></li>
+<li><p>0:20&#8211;0:35 Gather your project texts: download two or three Wikipedia pages (or your own documents) as PDF and upload them (aim for at least 800 characters of real content).</p></li>
+<li><p>0:35&#8211;1:00 Query your RAG: ask an in-text question, a follow-up, an out-of-text question (does it refuse or hallucinate?), and a memory question (&#8220;what did I ask earlier?&#8221;).</p></li>
+<li><p>1:00&#8211;1:10 Guardrail challenge: like the Taipei Metro AI customer-service system that answered off-topic questions, how would you stop your bot from answering things outside its documents? Write your fix in the notebook.</p></li>
+<li><p>1:10&#8211;1:15 Save your chat log; preview Day 5 (turning this into a shareable web app).</p></li>
 </ul>
 <p><strong>Student worksheet</strong></p>
-<p>Choose one multi-step task:</p>
 <ul>
-<li><p>Turn your messy course notes (paste them in) into a structured study guide with key terms and a short quiz.</p></li>
-<li><p>Plan a three-stop campus or neighborhood tour for visiting students, with a short reason for each stop.</p></li>
-<li><p>Draft a short opinion piece on an AI topic, then ask Claude to critique its own argument and revise it.</p></li>
+<li><p>Run the RAG notebook on your uploaded texts and ask: What are the key points of these documents? Then a related follow-up question.</p></li>
+<li><p>Ask one question the documents do not cover, and note whether the bot refuses or makes something up.</p></li>
+<li><p>Ask &#8220;what have I asked so far?&#8221; to confirm the conversation memory works.</p></li>
+<li><p>In the notebook, write one possible way to keep the bot on-topic (the guardrail challenge).</p></li>
 </ul>
-<p>Then follow these steps:</p>
+<p><strong>Deliverable: </strong>A working RAG notebook on your project topic, your uploaded texts, and a saved conversation log showing in-text, out-of-text, and memory questions. Remove your API key before sharing.</p>
+<p><strong>Instructor notes</strong></p>
 <ul>
-<li><p>Give Claude the task with clear context and the output you want.</p></li>
-<li><p>Ask it to outline its plan before doing the task, and review the plan.</p></li>
-<li><p>Let it produce the result, then push back: request changes, point out a weakness, or ask for sources or a different tone.</p></li>
-<li><p>Iterate two or three times and notice how it uses your feedback.</p></li>
+<li><p>Keep the embedding/indexing explanation conceptual (vectors as meaning coordinates; the index as a library catalog). The notebook hides the code; students mainly upload texts and ask questions.</p></li>
+<li><p>The Wikipedia-PDF approach and the Taipei Metro guardrail case come from the TA RAG materials. The guardrail step is where the course&#8217;s trust and misinformation theme now lives.</p></li>
+<li><p>This is dedicated project build time; circulate and help teams whose retrieval returns weak answers (usually too little text, or texts with no relation to the questions).</p></li>
 </ul>
-<p><strong>Deliverable: </strong>The task you chose, the final output, and three bullets: what worked, what failed, and what you would change about your instructions.</p>
-<p><strong>Day 5 (7/27): Synthetic Media, Misinformation &amp; Trust (Hands-on Studio)</strong></p>
-<p><strong>Goal: </strong>Investigate how generative AI creates synthetic media, and build practical habits for detecting it and deciding what to trust. This session ties the whole course back to digital communication.</p>
-<p><strong>Tools: </strong>Browser only. Claude (claude.ai); a reverse image search (Google Images or TinEye); the Content Credentials verifier (contentcredentials.org/verify); the SIFT method for lateral reading.</p>
+<p><strong>Day 5 (7/27): Build and ship your AI app (Gradio)</strong></p>
+<p><strong>Goal: </strong>Wrap your RAG system in a shareable web chat interface with Gradio, then assemble the final project (app + poster) for Day 6.</p>
+<p><strong>Tools: </strong>Google Colab + <a href="https://www.gradio.app/">Gradio</a> (<code>gr.ChatInterface</code>) + OpenRouter free models. Multi-file example / homework template: <a href="https://colab.research.google.com/drive/12BPWipsLYtxr-5IWMbbR81XjrWYCSfrZ?usp=sharing">Gradio Colab</a>. Final-project starter: <a href="https://colab.research.google.com/drive/109UIKfTQjemQixheofkPe01fngmvzh02?usp=sharing">project Colab</a>.</p>
 <p><strong>Run of show</strong></p>
 <ul>
-<li><p>0:00–0:10 Framing: the synthetic-media spectrum, from cheapfakes (miscaptioned or edited real media) to deepfakes (fully AI-generated). Why this matters for communication, journalism, and public trust.</p></li>
-<li><p>0:10–0:35 Station A, Spot the fake. In pairs, compare sets of real and AI-generated images, short audio clips, and text, and record the tells that gave each one away.</p></li>
-<li><p>0:35–1:00 Station B, Verification toolkit. Practice three moves on a real example: reverse image search to find the origin, Content Credentials to read provenance, and the SIFT method (Stop, Investigate the source, Find better coverage, Trace to the original) for lateral reading.</p></li>
-<li><p>1:00–1:20 Station C, Red team / blue team. Using Claude, the red side drafts a plausible but false claim with a convincing style; the blue side then uses Claude plus real sources to debunk it. Debrief the dual-use tension and where each side broke down.</p></li>
-<li><p>1:20–1:30 Debrief and bridge to the group project: what makes a claim trustworthy, and how teams will document their own sources with NotebookLM.</p></li>
+<li><p>0:00&#8211;0:10 Gradio in brief: <code>gr.ChatInterface</code> takes a function of (message, history) and returns a reply; launching gives you a public <code>.gradio.live</code> link anyone can open.</p></li>
+<li><p>0:10&#8211;0:30 Example 1: set your topic and persona, launch the chat UI, and open your public link on your phone.</p></li>
+<li><p>0:30&#8211;0:55 Example 2 (multi-file RAG): upload your project texts, load them, and ask cross-document questions (&#8220;what do these have in common?&#8221;).</p></li>
+<li><p>0:55&#8211;1:10 Assemble the final project: topic, texts, system prompt, and the running Gradio app. Start your poster.</p></li>
+<li><p>1:10&#8211;1:15 Save your app link and chat log; confirm Day 6 presentation order.</p></li>
 </ul>
 <p><strong>Student worksheet</strong></p>
-<p>Part A. Spot the fake. For each item you are shown (image, audio, text), write down your verdict (real or AI-generated) and the single strongest tell you noticed. Then compare with the answer key and note one tell that fooled you.</p>
-<p>Part B. Verification toolkit. Take one questionable image or claim and run all three moves:</p>
 <ul>
-<li><p>Reverse image search: where does this image actually first appear, and in what context?</p></li>
-<li><p>Content Credentials (contentcredentials.org/verify): does the file carry provenance data? What does it say about how it was made or edited?</p></li>
-<li><p>SIFT / lateral reading: leave the page, find what other reliable sources say, and trace the claim to its original context.</p></li>
+<li><p>In the multi-file example, upload at least two related documents and ask, in order: which files did I upload? What is each about? Do they share a common theme?</p></li>
+<li><p>Give your chat interface a clear title and description for your topic.</p></li>
+<li><p>Note your live <code>.gradio.live</code> link (it is temporary; keep a screenshot too) and download the chat log.</p></li>
+<li><p>On your poster, state your app&#8217;s purpose, its likely users, and one limitation or guardrail.</p></li>
 </ul>
-<p>Part C. Red team / blue team. As a team, use Claude to draft one plausible but false claim on a topic you care about, then switch roles and use Claude plus at least two real sources to debunk it. Record what made the fake convincing and what finally exposed it.</p>
-<p><strong>Deliverable: </strong>A short verification log: one item you checked, the three moves you ran and what each revealed, your final judgment (trustworthy or not), and one sentence on how this changes the way you will share content online.</p>
+<p><strong>Deliverable: </strong>A live Gradio RAG chatbot on your topic (shareable link plus screenshot), the conversation log, and a poster draft. This is your Day 6 final project.</p>
+<p><strong>Instructor notes</strong></p>
+<ul>
+<li><p>Gradio share links expire after a short time and the Colab session must stay open, so have teams keep screenshots and be ready to relaunch for their presentation.</p></li>
+<li><p>Free-model availability shifts: <code>mistralai/mistral-7b-instruct:free</code> and <code>google/gemma-3-12b-it:free</code> are reliable defaults; check OpenRouter before class in case one changes.</p></li>
+<li><p>The final-project brief (choose a topic, find texts, design a system prompt, build the app, make a poster) comes from the TA final-project materials. The poster and app are what teams present on Day 6.</p></li>
+</ul>
 <p><strong>Day 6 (7/28): Group Presentations</strong></p>
-<p>Each of the 4 teams presents a chosen AI application or issue, drawing on the labs and the synthetic-media studio. Plan on about 7 minutes of talk plus 3 minutes of Q&amp;A per team.</p>
+<p>Each of the 4 teams presents its final project: the topic chatbot (a Gradio RAG app) built across Days 3 to 5, with a poster covering the topic, the source texts, the system prompt, and one limitation or guardrail. Plan on about 7 minutes of talk plus 3 minutes of Q&amp;A per team; a live demo of the app is encouraged.</p>
 <p><strong>Run of show</strong></p>
 <ul>
-<li><p>0:00–0:10 Set up; confirm presentation order; remind students of the rubric.</p></li>
-<li><p>0:10–1:00 Four team presentations, about 10 minutes each (7 minutes talk, 3 minutes Q&amp;A).</p></li>
-<li><p>1:00–1:20 Peer feedback forms and short instructor comments.</p></li>
-<li><p>1:20–1:30 Course wrap-up and final reflection.</p></li>
+<li><p>0:00–0:08 Set up; confirm presentation order; remind students of the rubric.</p></li>
+<li><p>0:08–0:58 Four team presentations, about 10 minutes each (7 minutes talk, 3 minutes Q&amp;A).</p></li>
+<li><p>0:58–1:10 Peer feedback forms and short instructor comments.</p></li>
+<li><p>1:10–1:15 Course wrap-up and final reflection.</p></li>
 </ul>
 <p><strong>Slide outline (1-page template)</strong></p>
 <ul>
@@ -169,12 +188,12 @@
 <li><p>Connection to course concepts and your own hands-on results.</p></li>
 <li><p>Conclusion and questions for the audience.</p></li>
 </ul>
-<p><strong>Grading rubric</strong></p>
+<p><strong>Grading rubric (share with students)</strong></p>
 <ul>
 <li><p>Content and accuracy.</p></li>
 <li><p>Critical analysis: value plus a societal or ethical implication.</p></li>
 <li><p>Connection to course concepts and hands-on labs.</p></li>
-<li><p>Use and citation of sources (organized with NotebookLM).</p></li>
+<li><p>Use and citation of your source texts (the documents behind your RAG app).</p></li>
 <li><p>Delivery and clarity.</p></li>
 <li><p>Response to questions.</p></li>
 <li><p>Teamwork and equal participation.</p></li>

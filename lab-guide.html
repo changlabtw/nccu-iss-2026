@@ -65,10 +65,10 @@
 </ul>
 <p><strong>Day 2 (7/21): Train an Image Classifier (Fashion-MNIST)</strong></p>
 <p><strong>Goal: </strong>Train a real image classifier and see how design choices change accuracy and overfitting.</p>
-<p><strong>Tools: </strong>Google Colab (pre-built notebook, mostly run-only with clearly marked edit cells); Fashion-MNIST dataset.</p>
+<p><strong>Tools: </strong>Google Colab (pre-built notebook, mostly run-only with clearly marked edit cells); Fashion-MNIST dataset. Lab notebook: <a href="https://colab.research.google.com/drive/1VmaPC-wrbgolgOqONM7tqlE6fbc8Yas7?usp=sharing">Fashion-MNIST Colab</a>.</p>
 <p><strong>Run of show</strong></p>
 <ul>
-<li><p>0:00–0:08 Open the shared Colab link; File &gt; Save a copy in Drive.</p></li>
+<li><p>0:00–0:08 Open the <a href="https://colab.research.google.com/drive/1VmaPC-wrbgolgOqONM7tqlE6fbc8Yas7?usp=sharing">shared Colab notebook</a>; File &gt; Save a copy in Drive.</p></li>
 <li><p>0:08–0:25 Run the load and view cells; look at the 10 clothing classes and sample images.</p></li>
 <li><p>0:25–0:50 Build and train the model; read training and validation accuracy; find a misclassified image.</p></li>
 <li><p>0:50–1:05 Parameter experiment: change one thing at a time and re-run.</p></li>
@@ -95,7 +95,7 @@
 </ul>
 <p><strong>Day 3 (7/22): Prompt Engineering + choose your project</strong></p>
 <p><strong>Goal: </strong>Learn to steer a language model with prompt engineering, then pick your team's final-project topic and draft its system prompt. Days 3 to 5 build one project: a topic chatbot that answers from documents you provide (a RAG app), presented on Day 6.</p>
-<p><strong>Tools: </strong>Google Colab; a free <a href="https://openrouter.ai/">OpenRouter</a> API key; free models (<code>mistralai/mistral-7b-instruct:free</code>, <code>google/gemma-3-12b-it:free</code>). Example notebook: <a href="https://colab.research.google.com/drive/12yE-Rc8vyGqzWeslRK_u4Y0_B5hSyDh4?usp=sharing">Prompt Engineering Colab</a>. Homework template: <a href="https://colab.research.google.com/drive/1eLt6xVOmCHp7bVyFN7K0B0u4adRqa7re?usp=sharing">template</a>.</p>
+<p><strong>Tools: </strong>Google Colab; a free <a href="https://openrouter.ai/">OpenRouter</a> API key; free models (<code>google/gemma-4-31b-it:free</code>, <code>openai/gpt-oss-20b:free</code>). Example notebook: <a href="https://colab.research.google.com/drive/12yE-Rc8vyGqzWeslRK_u4Y0_B5hSyDh4?usp=sharing">Prompt Engineering Colab</a>. <em>Free model IDs rotate; if a model returns a 404, pick another from openrouter.ai/models (filter: free).</em> Homework template: <a href="https://colab.research.google.com/drive/1eLt6xVOmCHp7bVyFN7K0B0u4adRqa7re?usp=sharing">template</a>.</p>
 <p><strong>Run of show</strong></p>
 <ul>
 <li><p>0:00&#8211;0:10 Get a free OpenRouter API key; open the example Colab; make your first model call.</p></li>
@@ -120,7 +120,7 @@
 </ul>
 <p><strong>Day 4 (7/23): Give your chatbot knowledge with RAG</strong></p>
 <p><strong>Goal: </strong>Build a retrieval-augmented (RAG) system so your chatbot answers from documents you provide, not just its training data. (Today&#8217;s lecture, AI at the Frontier of Science, is separate; this lab is your project build time.)</p>
-<p><strong>Tools: </strong>Google Colab (SentenceTransformer + FAISS) + OpenRouter free models. Example notebook: <a href="https://colab.research.google.com/drive/1wHrffdUar0DUa0h9TYNCbY3l0cV1ClX3?usp=sharing">RAG Colab</a>. Homework template: <a href="https://colab.research.google.com/drive/1silumgGEI0i2kzsdehe4-fZGIWX-d6N0?usp=sharing">template</a>. Sample texts: <a href="https://drive.google.com/drive/folders/1oyiGAzsgAsoQnzOzkSFOzM5vcSLd_bEV?usp=sharing">folder</a>.</p>
+<p><strong>Tools: </strong>Google Colab (SentenceTransformer + FAISS) + OpenRouter free models. Example notebook: <a href="https://colab.research.google.com/drive/1wHrffdUar0DUa0h9TYNCbY3l0cV1ClX3?usp=sharing">RAG Colab</a>. Homework template: <a href="https://colab.research.google.com/drive/1silumgGEI0i2kzsdehe4-fZGIWX-d6N0?usp=sharing">template</a>. Sample texts: <a href="https://drive.google.com/drive/folders/1oyiGAzsgAsoQnzOzkSFOzM5vcSLd_bEV?usp=sharing">folder</a>. <em>Free model IDs rotate; if a model returns a 404, run the notebook’s “list free models” cell and pick a live one.</em></p>
 <p><strong>Run of show</strong></p>
 <ul>
 <li><p>0:00&#8211;0:08 Why RAG: a model&#8217;s knowledge has a cutoff and can hallucinate; RAG lets it retrieve from your documents. The retrieve &#8594; augment &#8594; generate flow, and embedding + indexing in plain terms.</p></li>
@@ -166,7 +166,7 @@
 <p><strong>Instructor notes</strong></p>
 <ul>
 <li><p>Gradio share links expire after a short time and the Colab session must stay open, so have teams keep screenshots and be ready to relaunch for their presentation.</p></li>
-<li><p>Free-model availability shifts: <code>mistralai/mistral-7b-instruct:free</code> and <code>google/gemma-3-12b-it:free</code> are reliable defaults; check OpenRouter before class in case one changes.</p></li>
+<li><p>Free-model availability shifts: <code>google/gemma-4-31b-it:free</code> and <code>openai/gpt-oss-20b:free</code> are reliable defaults; check OpenRouter before class in case one changes.</p></li>
 <li><p>The final-project brief (choose a topic, find texts, design a system prompt, build the app, make a poster) comes from the TA final-project materials. The poster and app are what teams present on Day 6.</p></li>
 </ul>
 <p><strong>Day 6 (7/28): Group Presentations</strong></p>

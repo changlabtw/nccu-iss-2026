@@ -33,8 +33,8 @@
 <ul>
 <li><p>Each day runs 09:10–10:30 lecture, a 10-minute break, then the hands-on lab from about 10:45 to 12:00 (roughly 1.25 hours). The lab is fully browser-based, so it works on the library lab computers with no installation and no personal laptop required.</p></li>
 <li><p>We standardize on Claude (claude.ai) as the course LLM, so it stays consistent with the AI-agent session and the NotebookLM handout.</p></li>
-<li><p>Students work in 4 teams (15 students split as three teams of 4 and one team of 3), seated together so they can collaborate and later present as a team.</p></li>
-<li><p>Days 1 to 5 are hands-on labs (below). Days 3 to 5 build one final project (a topic chatbot that answers from your own documents), which teams present on Day 6.</p></li>
+<li><p>Each student works on their own individual project (about 8 students, so about 8 projects). Seat students so they can still talk to a neighbour and compare results, even though the project is solo.</p></li>
+<li><p>Days 1 to 5 are hands-on labs (below). Days 3 to 5 build one final project (a topic chatbot that answers from your own documents), which each student presents on Day 6.</p></li>
 </ul>
 <p><strong>Day 1 (7/20): AI Big Picture &amp; Neural Network Intuition</strong></p>
 <p><strong>Goal: </strong>Build intuition for how a neural network learns, with no coding.</p>
@@ -42,7 +42,7 @@
 <p><strong>Run of show</strong></p>
 <ul>
 <li><p>0:00–0:10 Account setup checklist (Google/Colab, Claude, NotebookLM); help your neighbor.</p></li>
-<li><p>0:10–0:15 Form the 4 teams and choose a team name.</p></li>
+<li><p>0:10–0:15 Quick round of introductions; explain that each student will build their own project across Days 3 to 5.</p></li>
 <li><p>0:15–0:28 Guided tour of Playground (features, hidden layers, neurons, output, loss).</p></li>
 <li><p>0:28–1:00 Challenge worksheet (below).</p></li>
 <li><p>1:00–1:10 Share best networks; discuss overfitting.</p></li>
@@ -72,7 +72,7 @@
 <li><p>0:08–0:25 Run the load and view cells; look at the 10 clothing classes and sample images.</p></li>
 <li><p>0:25–0:50 Build and train the model; read training and validation accuracy; find a misclassified image.</p></li>
 <li><p>0:50–1:05 Parameter experiment: change one thing at a time and re-run.</p></li>
-<li><p>1:05–1:15 Compare results across groups; discuss overfitting.</p></li>
+<li><p>1:05–1:15 Compare results with your neighbours; discuss overfitting.</p></li>
 </ul>
 <p><strong>Student worksheet</strong></p>
 <ul>
@@ -91,17 +91,17 @@
 <ul>
 <li><p>Share the notebook link or a QR code in advance; mark editable cells clearly (for example, ### CHANGE ME ###).</p></li>
 <li><p>Fashion-MNIST loads from keras.datasets and trains fast on CPU, so no GPU is needed. Keep a results-cached copy as a fallback if Colab is slow.</p></li>
-<li><p>Advanced groups can add a Dropout layer and observe how the train and validation gap changes.</p></li>
+<li><p>Advanced students can add a Dropout layer and observe how the train and validation gap changes.</p></li>
 </ul>
 <p><strong>Day 3 (7/22): Prompt Engineering + choose your project</strong></p>
-<p><strong>Goal: </strong>Learn to steer a language model with prompt engineering, then pick your team's final-project topic and draft its system prompt. Days 3 to 5 build one project: a topic chatbot that answers from documents you provide (a RAG app), presented on Day 6.</p>
-<p><strong>Tools: </strong>Google Colab; a free <a href="https://openrouter.ai/">OpenRouter</a> API key; free models (<code>google/gemma-4-31b-it:free</code>, <code>openai/gpt-oss-20b:free</code>). Example notebook: <a href="https://colab.research.google.com/drive/12yE-Rc8vyGqzWeslRK_u4Y0_B5hSyDh4?usp=sharing">Prompt Engineering Colab</a>. <em>Free model IDs rotate; if a model returns a 404, pick another from openrouter.ai/models (filter: free).</em> Homework template: <a href="https://colab.research.google.com/drive/1eLt6xVOmCHp7bVyFN7K0B0u4adRqa7re?usp=sharing">template</a>.</p>
+<p><strong>Goal: </strong>Learn to steer a language model with prompt engineering, then pick your own final-project topic and draft its system prompt. Days 3 to 5 build one project: a topic chatbot that answers from documents you provide (a RAG app), presented on Day 6.</p>
+<p><strong>Tools: </strong>Google Colab; a free <a href="https://openrouter.ai/">OpenRouter</a> API key; free models (<code>google/gemma-4-31b-it:free</code>, <code>openai/gpt-oss-20b:free</code>). Example notebook: <a href="https://colab.research.google.com/drive/1w_8Ce8AJvzoNeEzfz-njzUzUbvxDH17Z?usp=sharing">Prompt Engineering Colab</a>. <em>Free model IDs rotate; if a model returns a 404, pick another from openrouter.ai/models (filter: free).</em> Homework template: <a href="https://colab.research.google.com/drive/1eLt6xVOmCHp7bVyFN7K0B0u4adRqa7re?usp=sharing">template</a>.</p>
 <p><strong>Run of show</strong></p>
 <ul>
 <li><p>0:00&#8211;0:10 Get a free OpenRouter API key; open the example Colab; make your first model call.</p></li>
 <li><p>0:10&#8211;0:35 Five prompt techniques, one at a time: persona/role, format constraints, few-shot examples, precise description, and chain-of-thought. Change the system and user prompt, re-run, and note what improved.</p></li>
 <li><p>0:35&#8211;0:50 &#8220;Who&#8217;s on First&#8221; activity: run the same ambiguous dialogue through two or three different free models and compare how each one reasons.</p></li>
-<li><p>0:50&#8211;1:10 As a team, choose your final-project topic (be creative; it can relate to your own field) and draft a system prompt that uses at least two techniques.</p></li>
+<li><p>0:50&#8211;1:10 Choose your final-project topic (be creative; it can relate to your own field) and draft a system prompt that uses at least two techniques.</p></li>
 <li><p>1:10&#8211;1:15 Share topics; preview Day 4 (giving your chatbot real knowledge with RAG).</p></li>
 </ul>
 <p><strong>Student worksheet</strong></p>
@@ -111,16 +111,16 @@
 <li><p>Add a format constraint (for example, &#8220;list exactly five items, no introduction or conclusion&#8221;) and a one-shot example.</p></li>
 <li><p>Write one sentence on which single change helped most, and which two techniques you will use in your project&#8217;s system prompt.</p></li>
 </ul>
-<p><strong>Deliverable: </strong>Your team&#8217;s project topic and a first system prompt that uses at least two prompt-engineering techniques, plus a short note on the difference prompt engineering made. Remove your API key before sharing the Colab link.</p>
+<p><strong>Deliverable: </strong>Your project topic and a first system prompt that uses at least two prompt-engineering techniques, plus a short note on the difference prompt engineering made. Remove your API key before sharing the Colab link.</p>
 <p><strong>Instructor notes</strong></p>
 <ul>
-<li><p>The course standardizes on Claude for discussion, but this lab uses OpenRouter free models so every team can call an API in Colab without cost. Have students work in teams on one key if rate limits bite.</p></li>
+<li><p>The course standardizes on Claude for discussion, but this lab uses OpenRouter free models so every student can call an API in Colab without cost. Students can share one key between two or three people if rate limits bite.</p></li>
 <li><p>The five techniques and the &#8220;Who&#8217;s on First&#8221; example come from the TA hands-on materials; keep example tasks close to humanities and social-science interests.</p></li>
-<li><p>End on topic selection: this is the seed of the whole three-day project. Nudge teams toward topics with findable text sources (a Wikipedia subject, a body of documents, a domain they know).</p></li>
+<li><p>End on topic selection: this is the seed of the whole three-day project. Nudge students toward topics with findable text sources (a Wikipedia subject, a body of documents, a domain they know).</p></li>
 </ul>
 <p><strong>Day 4 (7/23): Give your chatbot knowledge with RAG</strong></p>
 <p><strong>Goal: </strong>Build a retrieval-augmented (RAG) system so your chatbot answers from documents you provide, not just its training data. (Today&#8217;s lecture, AI at the Frontier of Science, is separate; this lab is your project build time.)</p>
-<p><strong>Tools: </strong>Google Colab (SentenceTransformer + FAISS) + OpenRouter free models. Example notebook: <a href="https://colab.research.google.com/drive/1wHrffdUar0DUa0h9TYNCbY3l0cV1ClX3?usp=sharing">RAG Colab</a>. Homework template: <a href="https://colab.research.google.com/drive/1silumgGEI0i2kzsdehe4-fZGIWX-d6N0?usp=sharing">template</a>. Sample texts: <a href="https://drive.google.com/drive/folders/1oyiGAzsgAsoQnzOzkSFOzM5vcSLd_bEV?usp=sharing">folder</a>. <em>Free model IDs rotate; if a model returns a 404, run the notebook’s “list free models” cell and pick a live one.</em></p>
+<p><strong>Tools: </strong>Google Colab (SentenceTransformer + FAISS) + OpenRouter free models. Example notebook: <a href="https://colab.research.google.com/drive/1XmmhSsbjoe5wp1hoDEDGpv_l1lrZAMp6">RAG Colab</a>. Homework template: <a href="https://colab.research.google.com/drive/1silumgGEI0i2kzsdehe4-fZGIWX-d6N0?usp=sharing">template</a>. Sample texts: <a href="https://drive.google.com/drive/folders/1oyiGAzsgAsoQnzOzkSFOzM5vcSLd_bEV?usp=sharing">folder</a>. <em>Free model IDs rotate; if a model returns a 404, run the notebook’s “list free models” cell and pick a live one.</em></p>
 <p><strong>Run of show</strong></p>
 <ul>
 <li><p>0:00&#8211;0:08 Why RAG: a model&#8217;s knowledge has a cutoff and can hallucinate; RAG lets it retrieve from your documents. The retrieve &#8594; augment &#8594; generate flow, and embedding + indexing in plain terms.</p></li>
@@ -142,11 +142,11 @@
 <ul>
 <li><p>Keep the embedding/indexing explanation conceptual (vectors as meaning coordinates; the index as a library catalog). The notebook hides the code; students mainly upload texts and ask questions.</p></li>
 <li><p>The Wikipedia-PDF approach and the Taipei Metro guardrail case come from the TA RAG materials. The guardrail step is where the course&#8217;s trust and misinformation theme now lives.</p></li>
-<li><p>This is dedicated project build time; circulate and help teams whose retrieval returns weak answers (usually too little text, or texts with no relation to the questions).</p></li>
+<li><p>This is dedicated project build time; circulate and help students whose retrieval returns weak answers (usually too little text, or texts with no relation to the questions).</p></li>
 </ul>
 <p><strong>Day 5 (7/27): Build and ship your AI app (Gradio)</strong></p>
 <p><strong>Goal: </strong>Wrap your RAG system in a shareable web chat interface with Gradio, then assemble the final project (app + poster) for Day 6.</p>
-<p><strong>Tools: </strong>Google Colab + <a href="https://www.gradio.app/">Gradio</a> (<code>gr.ChatInterface</code>) + OpenRouter free models. Multi-file example / homework template: <a href="https://colab.research.google.com/drive/12BPWipsLYtxr-5IWMbbR81XjrWYCSfrZ?usp=sharing">Gradio Colab</a>. Final-project starter: <a href="https://colab.research.google.com/drive/109UIKfTQjemQixheofkPe01fngmvzh02?usp=sharing">project Colab</a>.</p>
+<p><strong>Tools: </strong>Google Colab + <a href="https://www.gradio.app/">Gradio</a> (<code>gr.ChatInterface</code>) + OpenRouter free models. Multi-file example / homework template: <a href="https://colab.research.google.com/drive/19P2NBc5lzYqKiSNXkhexQ973GPGteoMQ">Gradio Colab</a>. Final-project starter: <a href="https://colab.research.google.com/drive/109UIKfTQjemQixheofkPe01fngmvzh02?usp=sharing">project Colab</a>.</p>
 <p><strong>Run of show</strong></p>
 <ul>
 <li><p>0:00&#8211;0:10 Gradio in brief: <code>gr.ChatInterface</code> takes a function of (message, history) and returns a reply; launching gives you a public <code>.gradio.live</code> link anyone can open.</p></li>
@@ -165,22 +165,24 @@
 <p><strong>Deliverable: </strong>A live Gradio RAG chatbot on your topic (shareable link plus screenshot), the conversation log, and a poster draft. This is your Day 6 final project.</p>
 <p><strong>Instructor notes</strong></p>
 <ul>
-<li><p>Gradio share links expire after a short time and the Colab session must stay open, so have teams keep screenshots and be ready to relaunch for their presentation.</p></li>
+<li><p>Gradio share links expire after a short time and the Colab session must stay open, so have students keep screenshots and be ready to relaunch for their presentation.</p></li>
 <li><p>Free-model availability shifts: <code>google/gemma-4-31b-it:free</code> and <code>openai/gpt-oss-20b:free</code> are reliable defaults; check OpenRouter before class in case one changes.</p></li>
-<li><p>The final-project brief (choose a topic, find texts, design a system prompt, build the app, make a poster) comes from the TA final-project materials. The poster and app are what teams present on Day 6.</p></li>
+<li><p>The final-project brief (choose a topic, find texts, design a system prompt, build the app, make a poster) comes from the TA final-project materials. The poster and app are what each student presents on Day 6.</p></li>
 </ul>
-<p><strong>Day 6 (7/28): Group Presentations</strong></p>
-<p>Each of the 4 teams presents its final project: the topic chatbot (a Gradio RAG app) built across Days 3 to 5, with a poster covering the topic, the source texts, the system prompt, and one limitation or guardrail. Plan on about 7 minutes of talk plus 3 minutes of Q&amp;A per team; a live demo of the app is encouraged.</p>
+<p><strong>Day 6 (7/28): Final Presentations</strong></p>
+<p>Each student presents their individual final project: the topic chatbot (a Gradio RAG app) built across Days 3 to 5, with a poster covering the topic, the source texts, the system prompt, and one limitation or guardrail. Plan on about 7 minutes of talk plus 3 minutes of Q&amp;A per student (10 minutes total); a live demo of the app is encouraged.</p>
 <p><strong>Run of show</strong></p>
 <ul>
 <li><p>0:00–0:08 Set up; confirm presentation order; remind students of the rubric.</p></li>
-<li><p>0:08–0:58 Four team presentations, about 10 minutes each (7 minutes talk, 3 minutes Q&amp;A).</p></li>
-<li><p>0:58–1:10 Peer feedback forms and short instructor comments.</p></li>
-<li><p>1:10–1:15 Course wrap-up and final reflection.</p></li>
+<li><p>0:08–0:48 Presentations 1–4, 10 minutes each (7 minutes talk, 3 minutes Q&amp;A).</p></li>
+<li><p>0:48–0:58 Break.</p></li>
+<li><p>0:58–1:38 Presentations 5–8, same format.</p></li>
+<li><p>1:38–1:50 Peer feedback forms and short instructor comments.</p></li>
+<li><p>1:50–2:00 Course wrap-up and final reflection.</p></li>
 </ul>
 <p><strong>Slide outline (1-page template)</strong></p>
 <ul>
-<li><p>Title and team members.</p></li>
+<li><p>Title and your name.</p></li>
 <li><p>The AI application or issue you chose.</p></li>
 <li><p>How it works, in plain language.</p></li>
 <li><p>Why it matters: its value or benefit.</p></li>
@@ -196,11 +198,11 @@
 <li><p>Use and citation of your source texts (the documents behind your RAG app).</p></li>
 <li><p>Delivery and clarity.</p></li>
 <li><p>Response to questions.</p></li>
-<li><p>Teamwork and equal participation.</p></li>
+<li><p>Preparation: evidence you tested your app and can discuss its limits.</p></li>
 </ul>
-<p><strong>Peer feedback form (one per team, per audience member)</strong></p>
+<p><strong>Peer feedback form (one per presenter, per audience member)</strong></p>
 <ul>
-<li><p>Two things this team did well.</p></li>
+<li><p>Two things this presenter did well.</p></li>
 <li><p>One question you still have.</p></li>
 <li><p>One concrete suggestion.</p></li>
 </ul>
